@@ -1,0 +1,26 @@
+{
+    "name":        "graphql-io",
+    "version":     "0.9.0",
+    "description": "GraphQL Network Communication Framework (Meta)",
+    "keywords":    [ "graphql", "network", "communication", "framework", "meta" ],
+    "main":        "./graphql-io.js",
+    "repository": {
+        "type": "git",
+        "url":  "https://github.com/rse/graphql-io.git"
+    },
+    "author": {
+        "name":  "Ralf S. Engelschall",
+        "email": "rse@engelschall.com",
+        "url":   "http://engelschall.com"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url":  "http://opensource.org/licenses/MIT"
+    }],
+    "homepage": "https://github.com/rse/graphql-io",
+    "bugs":     "https://github.com/rse/graphql-io/issues",
+    "dependencies": {
+        "graphql-io-client":  "latest",
+        "graphql-io-server":  "latest"
+    }
+}
