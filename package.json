@@ -22,5 +22,8 @@
     "dependencies": {
         "graphql-io-client":  "latest",
         "graphql-io-server":  "latest"
+    },
+    "engines": {
+        "node":               ">=6.0.0"
     }
 }

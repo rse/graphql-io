@@ -23,8 +23,8 @@
 */
 
 /*  import API classes  */
-import { Client, Query, Subscription } from "graphql-io-client"
-import { Server }                      from "graphql-io-server"
+const { Client, Query, Subscription } = require("graphql-io-client")
+const { Server }                      = require("graphql-io-server")
 
 /*  export the traditional way for interoperability reasons
     (as Babel would export an object with a 'default' field)  */
