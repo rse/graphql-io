@@ -1,6 +1,6 @@
 
-[GraphQL-IO-Meta](https://github.com/rse/graphql-io) &nbsp; | &nbsp;
-[GraphQL-IO-Server](https://github.com/rse/graphql-io-server) &nbsp; | &nbsp;
+[GraphQL-IO-Meta](https://github.com/rse/graphql-io) &nbsp;|&nbsp;
+[GraphQL-IO-Server](https://github.com/rse/graphql-io-server) &nbsp;|&nbsp;
 [GraphQL-IO-Client](https://github.com/rse/graphql-io-client)
 
 GraphQL IO
