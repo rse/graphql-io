@@ -52,16 +52,34 @@ Installation
 ------------
 
 ```shell
+# all-in-one
 $ npm install graphql-io
+
+# client-side only
+$ npm install graphql-io-client
+
+# server-side only
+$ npm install graphql-io-server
 ```
 
 Usage
 -----
 
 ```js
+/*  all-in-one  */
 import { Client } from "graphql-io"
 import { Server } from "graphql-io"
+
+/*  client-side only  */
+import { Client } from "graphql-io-client"
+
+/*  server-side only  */
+import { Server } from "graphql-io-server"
 ```
+
+For particular usage details, please see the
+[GraphQL-IO-Client](https://github.com/rse/graphql-io-client) and
+[GraphQL-IO-Server](https://github.com/rse/graphql-io-server) packages.
 
 License
 -------
