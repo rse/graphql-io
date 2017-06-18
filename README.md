@@ -34,9 +34,7 @@ Feel free to just use (particular versions of) the individual packages directly.
 On the client-side, it is based on the GraphQL engine [GraphQL.js](http://graphql.org/graphql-js/), the
 GraphQL client library [Apollo Client](https://github.com/apollographql/apollo-client), its
 WebSocket network interface [Apollo Client WS](https://github.com/rse/apollo-client-ws)
-and the HTTP client library [Axios](https://github.com/mzabriskie/axios). It has be used
-with the corresponding [GraphQL-IO-Server](https://github.com/rse/graphql-io-server)
-network communication framework on the JavaScript server side.
+and the HTTP client library [Axios](https://github.com/mzabriskie/axios).
 
 On the server-side, it is based on the GraphQL engine [GraphQL.js](http://graphql.org/graphql-js/),
 the GraphQL schema execution library [GraphQL-Tools](http://dev.apollodata.com/tools/graphql-tools/),
@@ -45,8 +43,6 @@ the GraphQL subscription management library [GraphQL-Tools-Subscribe](https://gi
 the network communication framework [HAPI](https://hapijs.com),
 the WebSocket integration plugin [HAPI-Plugin-WebSocket](https://github.com/rse/hapi-plugin-websocket)
 and the GraphiQL integration plugin [HAPI-Plugin-GraphiQL](https://github.com/rse/hapi-plugin-graphiql).
-It has be used with the corresponding [GraphQL-IO-Client](https://github.com/rse/graphql-io-client)
-network communication framework on the JavaScript client side.
 
 Installation
 ------------
