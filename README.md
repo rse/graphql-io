@@ -3,7 +3,7 @@
 [GraphQL-IO-Server](https://github.com/rse/graphql-io-server) &nbsp;|&nbsp;
 [GraphQL-IO-Client](https://github.com/rse/graphql-io-client)
 
-<img src="https://rawgit.com/rse/graphql-io/master/graphql-io.svg" width="300" align="right" alt=""/>
+<img src="https://rawgit.com/rse/graphql-io/master/graphql-io.svg" width="250" align="right" alt=""/>
 
 GraphQL IO
 ==========
