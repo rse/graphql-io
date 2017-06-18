@@ -3,6 +3,8 @@
 [GraphQL-IO-Server](https://github.com/rse/graphql-io-server) &nbsp;|&nbsp;
 [GraphQL-IO-Client](https://github.com/rse/graphql-io-client)
 
+<img src="./graphql-io.svg" width="200" align="right" alt=""/>
+
 GraphQL IO
 ==========
 
@@ -17,13 +19,13 @@ GraphQL Network Communication Framework (Meta)
 About
 -----
 
-This is a [GraphQL](http://graphql.org/) network communication framework for
+This is a [GraphQL](http://graphql.org/) based network communication framework for
 JavaScript clients, running under either Node.js or in the Browser,
 and JavaScript servers, running under Node.js.
 The client-side is provided by the module
-[GraphQL IO Client](https://github.com/rse/graphql-io-client),
+[GraphQL-IO-Client](https://github.com/rse/graphql-io-client),
 the server-side is provided by the module
-[GraphQL IO Server](https://github.com/rse/graphql-io-server).
+[GraphQL-IO-Server](https://github.com/rse/graphql-io-server).
 This is just a meta-package which bundles
 the server and client packages for being able to conveniently reference both
 the server and the client in their latest versions through a single package.
