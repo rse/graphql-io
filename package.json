@@ -20,8 +20,8 @@
     "homepage": "https://github.com/rse/graphql-io",
     "bugs":     "https://github.com/rse/graphql-io/issues",
     "dependencies": {
-        "graphql-io-client":  "~0.9.19",
-        "graphql-io-server":  "~0.9.14"
+        "graphql-io-client":  "~0.9.20",
+        "graphql-io-server":  "~0.9.15"
     },
     "engines": {
         "node":               ">=6.0.0"
