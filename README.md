@@ -77,12 +77,35 @@ For particular usage details, please see the
 [GraphQL-IO-Client](https://github.com/rse/graphql-io-client) and
 [GraphQL-IO-Server](https://github.com/rse/graphql-io-server) packages.
 
+Sneak Preview
+-------------
+
+```js
+/*  Hello World Server  */
+const { Server } = require("graphql-io-server")
+const server = new Server({ url: "http://127.0.0.1:12345/api" })
+server.at("graphql-resolver", () => ({
+    Root: { hello: [ "hello: String", () => "world" ] }
+}))
+await server.start()
+```
+
+```js
+/*  Hello World Client  */
+const { Client } = require("graphql-io-client")
+const client = new Client({ url: "http://127.0.0.1:12345/api" })
+await client.connect()
+let result = await client.query("{ hello }")
+await client.disconnect()
+console.log(result.data)
+```
+
 Samples
 -------
 
-For test-driving GraphQL-IO, check out the [samples](https://github.com/rse/graphql-io/tree/master/sample/).
+For test-driving GraphQL-IO, check out the [Samples](https://github.com/rse/graphql-io/tree/master/sample/).
 They show a minimum Hello World, subscriptions over separate client connections,
-real-time performance of server and usage from within Node.js and the Browser.
+real-time performance of server, usage from within Node.js and the Browser, etc.
 
 License
 -------
