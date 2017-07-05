@@ -17,3 +17,8 @@ GraphQL-IO Samples
   slider on the server and receives the new value back and
   updates the right slider. This showcases the realtime performance.
 
+- [4-entities](4-entities/):<br/>
+  One server, one client (either in Node.js or in Browser).
+  The client updates some entities.
+  This showcases the usage in Node.js and the browser.
+
