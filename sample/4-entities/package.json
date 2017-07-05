@@ -1,0 +1,36 @@
+{
+    "name":                "sample",
+    "version":             "0.0.0",
+    "description":         "",
+    "devDependencies": {
+        "stmux":           "latest",
+        "npm-run-all":     "latest",
+        "shx":             "latest"
+    },
+    "config": {
+        "dir-fe":          "1-frontend",
+        "dir-be":          "2-backend"
+    },
+    "scripts": {
+        "install":         "stmux -w error -e ERROR -m beep -- [ \"npm run install:fe\" .. \"npm run install:be\" ]",
+        "install:fe":      "cd $npm_package_config_dir_fe && npm install",
+        "install:be":      "cd $npm_package_config_dir_be && npm install",
+
+        "build":           "stmux -w error -e ERROR -m beep -- [ \"npm run build:fe\" .. \"npm run build:be\" ]",
+        "build:fe":        "cd $npm_package_config_dir_fe && npm run build",
+        "build:be":        "cd $npm_package_config_dir_be && npm run build",
+
+        "start":           "stmux -w error -e ERROR -m beep -- [ \"npm run start:fe\" .. \"npm run start:be\" ]",
+        "start:fe":        "cd $npm_package_config_dir_fe && npm start",
+        "start:be":        "cd $npm_package_config_dir_be && npm start",
+
+        "clean":           "stmux -w error -e ERROR -m beep -- [ \"npm run clean:fe\" .. \"npm run clean:be\" ]",
+        "clean:fe":        "cd $npm_package_config_dir_fe && npm run clean",
+        "clean:be":        "cd $npm_package_config_dir_be && npm run clean",
+
+        "distclean":       "stmux -w error -e ERROR -m beep -- [ [ \"npm run distclean:fe\" .. \"npm run distclean:be\" ] : \"npm run distclean:local\" ]",
+        "distclean:fe":    "cd $npm_package_config_dir_fe && npm run distclean",
+        "distclean:be":    "cd $npm_package_config_dir_be && npm run distclean",
+        "distclean:local": "shx rm -rf node_modules"
+    }
+}

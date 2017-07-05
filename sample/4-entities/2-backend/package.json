@@ -1,0 +1,20 @@
+{
+    "name":                               "2-backend",
+    "version":                            "0.0.0",
+    "description":                        "",
+    "dependencies": {
+        "graphql-io-server":              "latest",
+        "graphql-tools-sequelize":        "~1.3.5",
+        "graphql-tools-types":            "~1.1.8",
+        "sequelize":                      "~4.2.1",
+        "sqlite3":                        "~3.1.8"
+    },
+    "devDependencies": {
+        "shx":                            "latest"
+    },
+    "scripts": {
+        "start":                          "node server.js",
+        "clean":                          "shx rm -f sample.db",
+        "distclean":                      "shx rm -rf node_modules"
+    }
+}
