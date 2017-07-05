@@ -13,7 +13,7 @@
         "shx":                            "latest"
     },
     "scripts": {
-        "start":                          "node server.js",
+        "start":                          "node sample.js",
         "clean":                          "shx rm -f sample.db",
         "distclean":                      "shx rm -rf node_modules"
     }
