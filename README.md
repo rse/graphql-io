@@ -80,7 +80,7 @@ For particular usage details, please see the
 Samples
 -------
 
-For test-driving GraphQL-IO, check out the [samples](https://github.com/rse/graphql-io/sample/).
+For test-driving GraphQL-IO, check out the [samples](https://github.com/rse/graphql-io/tree/master/sample/).
 They show a minimum Hello World, subscriptions over separate client connections,
 real-time performance of server and usage from within Node.js and the Browser.
 
