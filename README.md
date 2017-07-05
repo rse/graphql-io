@@ -77,8 +77,8 @@ For particular usage details, please see the
 [GraphQL-IO-Client](https://github.com/rse/graphql-io-client) and
 [GraphQL-IO-Server](https://github.com/rse/graphql-io-server) packages.
 
-Sneak Preview
--------------
+Sample
+------
 
 ```js
 /*  Hello World Server  */
@@ -100,11 +100,8 @@ await client.disconnect()
 console.log(result.data)
 ```
 
-Samples
--------
-
-For test-driving GraphQL-IO, check out the [Samples](https://github.com/rse/graphql-io/tree/master/sample/).
-They show a minimum Hello World, subscriptions over separate client connections,
+For more elaborate samples, check out the [Samples](https://github.com/rse/graphql-io/tree/master/sample/) folder.
+These samples show a minimum Hello World, subscriptions over separate client connections,
 real-time performance of server, usage from within Node.js and the Browser, etc.
 
 License
