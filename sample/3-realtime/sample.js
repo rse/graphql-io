@@ -5,7 +5,6 @@
     */
 
     const { Server } = require("graphql-io-server")
-
     const server = new Server({ url: "http://127.0.0.1:12345/api" })
     server.at("graphql-schema", () => `
         extend type Root {
@@ -51,7 +50,6 @@
     }
 
     const { Client } = require("graphql-io-client")
-
     const client = new Client({ url: "http://127.0.0.1:12345/api" })
     await client.connect()
 
