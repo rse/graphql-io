@@ -77,6 +77,13 @@ For particular usage details, please see the
 [GraphQL-IO-Client](https://github.com/rse/graphql-io-client) and
 [GraphQL-IO-Server](https://github.com/rse/graphql-io-server) packages.
 
+Samples
+-------
+
+For test-driving GraphQL-IO, check out the [samples](https://github.com/rse/graphql-io/sample/).
+They show a minimum Hello World, subscriptions over separate client connections,
+real-time performance of server and usage from within Node.js and the Browser.
+
 License
 -------
 
