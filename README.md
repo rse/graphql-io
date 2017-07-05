@@ -1,5 +1,5 @@
 
-[GraphQL-IO-Meta](https://github.com/rse/graphql-io) &nbsp;|&nbsp;
+[GraphQL-IO](https://github.com/rse/graphql-io) &nbsp;|&nbsp;
 [GraphQL-IO-Client](https://github.com/rse/graphql-io-client) &nbsp;|&nbsp;
 [GraphQL-IO-Server](https://github.com/rse/graphql-io-server)
 
@@ -8,7 +8,7 @@
 GraphQL-IO
 ==========
 
-GraphQL Network Communication Framework (Meta Package)
+GraphQL Network Communication Framework
 
 <p/>
 <img src="https://nodei.co/npm/graphql-io.png?downloads=true&stars=true" alt=""/>
