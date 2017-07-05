@@ -74,10 +74,10 @@ import { Server } from "graphql-io-server"
 ```
 
 For particular usage details, please see the
-[GraphQL-IO Client](https://github.com/rse/graphql-io-client) package
-and its [GraphQL-IO Client API](https://github.com/rse/graphql-io-client/blob/master/src/graphql-io.d.ts)
-and the [GraphQL-IO Server](https://github.com/rse/graphql-io-server) package
-and its [GraphQL-IO Server API](https://github.com/rse/graphql-io-server/blob/master/src/graphql-io.d.ts).
+[GraphQL-IO-Client](https://github.com/rse/graphql-io-client) package
+and its [GraphQL-IO-Client API](https://github.com/rse/graphql-io-client/blob/master/src/graphql-io.d.ts)
+and the [GraphQL-IO-Server](https://github.com/rse/graphql-io-server) package
+and its [GraphQL-IO-Server API](https://github.com/rse/graphql-io-server/blob/master/src/graphql-io.d.ts).
 
 Sample
 ------
