@@ -6,7 +6,7 @@
 
     if (cluster.isMaster) {
         setTimeout(async () => {
-            const client = new Client({ url: "http://127.0.0.1:12345/api" })
+            const client = new Client({ url: "http://127.0.0.1:12345" })
             await client.connect()
             let subscription = client.query(`
                 subscription {
@@ -23,7 +23,7 @@
 
         setTimeout(() => {
             setInterval(async () => {
-                const client = new Client({ url: "http://127.0.0.1:12345/api" })
+                const client = new Client({ url: "http://127.0.0.1:12345" })
                 await client.connect()
                 let count = 0
                 let timer = setInterval(async () => {
@@ -45,7 +45,11 @@
     }
 
     console.log(`${cluster.isMaster ? "master" : "worker"} ${process.pid} started`)
-    const server = new Server({ url: "http://127.0.0.1:12345/api", pubsub: "mpm:foo", keyval: "mpm:foo" })
+    const server = new Server({
+        url: "http://127.0.0.1:12345",
+        pubsub: "mpm:foo",
+        keyval: "mpm:foo"
+    })
     server.at("graphql-query", () => console.log(`${cluster.isMaster ? "master" : "worker"} ${process.pid} query`))
     await server.start()
 

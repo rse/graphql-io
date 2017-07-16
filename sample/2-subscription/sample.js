@@ -6,7 +6,7 @@
     **  ==== SERVER ====
     */
 
-    const server = new Server({ url: "http://127.0.0.1:12345/api" })
+    const server = new Server({ url: "http://127.0.0.1:12345" })
     server.at("graphql-schema", () => `
         extend type Root {
             counter: Counter
@@ -40,7 +40,7 @@
     **  ==== CLIENT #1 ====
     */
 
-    const client1 = new Client({ url: "http://127.0.0.1:12345/api" })
+    const client1 = new Client({ url: "http://127.0.0.1:12345" })
     await client1.connect()
     let subscription = client1.query(`
         subscription {
@@ -56,7 +56,7 @@
     **  ==== CLIENT #2 ====
     */
 
-    const client2 = new Client({ url: "http://127.0.0.1:12345/api" })
+    const client2 = new Client({ url: "http://127.0.0.1:12345" })
     await client2.connect()
     setInterval(async () => {
         let result = await client2.query(`

@@ -233,7 +233,7 @@ let query = `
 
 /*  setup network service  */
 let server = new Server({
-    url:     "http://0.0.0.0:12345/api",
+    url:     "http://0.0.0.0:12345",
     pubsub:  "spm",
     keyval:  "spm",
     example: query.replace(/^\n/, "").replace(/^    /mg, "")
@@ -259,8 +259,8 @@ server.at("graphql-transaction", async (ctx) => {
 
 /*  start server  */
 server.start().then(() => {
-    console.log(`GraphiQL UI:  [GET]  http://0.0.0.0:12345/api`)
-    console.log(`GraphQL  API: [POST] http://0.0.0.0:12345/api`)
-    console.log(`GraphQL  API: [POST] ws://0.0.0.0:12345/api`)
+    console.log(`GraphiQL UI:  [GET]  http://0.0.0.0:12345`)
+    console.log(`GraphQL  API: [POST] http://0.0.0.0:12345`)
+    console.log(`GraphQL  API: [POST] ws://0.0.0.0:12345`)
 })
 

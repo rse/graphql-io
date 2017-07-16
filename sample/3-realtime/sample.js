@@ -5,7 +5,7 @@
     */
 
     const { Server } = require("graphql-io-server")
-    const server = new Server({ url: "http://127.0.0.1:12345/api" })
+    const server = new Server({ url: "http://127.0.0.1:12345" })
     server.at("graphql-schema", () => `
         extend type Root {
             slider: Slider
@@ -50,7 +50,7 @@
     }
 
     const { Client } = require("graphql-io-client")
-    const client = new Client({ url: "http://127.0.0.1:12345/api" })
+    const client = new Client({ url: "http://127.0.0.1:12345" })
     await client.connect()
 
     let subscription = client.query("subscription { slider { value } }").subscribe((result) => {
