@@ -21,7 +21,7 @@
     "bugs":     "https://github.com/rse/graphql-io/issues",
     "dependencies": {
         "graphql-io-client":  "~0.9.29",
-        "graphql-io-server":  "~0.9.24"
+        "graphql-io-server":  "~0.9.25"
     },
     "engines": {
         "node":               ">=6.0.0"
