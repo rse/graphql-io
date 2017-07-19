@@ -3,7 +3,7 @@
     "version":                            "0.0.0",
     "description":                        "",
     "dependencies": {
-        "graphql-io-client":              "latest"
+        "graphql-io-client":              "file:../../../../graphql-io-client"
     },
     "devDependencies": {
         "grunt":                          "~1.0.1",

@@ -42,13 +42,11 @@
 
     const client1 = new Client({ url: "http://127.0.0.1:12345" })
     await client1.connect()
-    let subscription = client1.query(`
-        subscription {
-            counter {
-                value
-            }
+    let subscription = client1.query(`{
+        counter {
+            value
         }
-    `).subscribe((result) => {
+    }`).subscribe((result) => {
         console.log("Client #1: Result:", result.data)
     })
 
@@ -59,13 +57,11 @@
     const client2 = new Client({ url: "http://127.0.0.1:12345" })
     await client2.connect()
     setInterval(async () => {
-        let result = await client2.query(`
-            mutation {
-                counter {
-                    increase { value }
-                }
+        let result = await client2.mutation(`{
+            counter {
+                increase { value }
             }
-        `)
+        }`)
         console.log("Client #2: Result:", result.data)
     }, 1 * 1000)
 

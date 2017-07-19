@@ -33,7 +33,7 @@ const newService = async (id) => {
     const sv2 = await newService("sv2")
 
     /*  the first service continuously queries...  */
-    let subscription = sv1.query(`subscription {
+    let subscription = sv1.query(`{
         OrgUnits {
             id
             name
@@ -50,7 +50,7 @@ const newService = async (id) => {
     /*  the second service manipulates multiple times...  */
     let cnt = 0
     let timer = setInterval(async () => {
-        await sv2.query(`mutation ($with: JSON!) {
+        await sv2.mutation(`($with: JSON!) {
             OrgUnit (id: "XT") {
                 update(with: $with) {
                     name

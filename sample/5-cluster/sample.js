@@ -8,15 +8,13 @@
         setTimeout(async () => {
             const client = new Client({ url: "http://127.0.0.1:12345" })
             await client.connect()
-            let subscription = client.query(`
-                subscription {
-                    _Server {
-                        load
-                        requests
-                        clients
-                    }
+            let subscription = client.query(`{
+                _Server {
+                    load
+                    requests
+                    clients
                 }
-            `).subscribe((result) => {
+            }`).subscribe((result) => {
                 console.log("Client: Result:", result.data)
             })
         }, 2 * 1000)
@@ -27,7 +25,7 @@
                 await client.connect()
                 let count = 0
                 let timer = setInterval(async () => {
-                    let response = await client.query(`query { _Server { version } }`)
+                    let response = await client.query(`{ _Server { version } }`)
                     console.log(response.data)
                     if (count++ > 100) {
                         clearTimeout(timer)

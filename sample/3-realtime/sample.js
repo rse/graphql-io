@@ -53,12 +53,12 @@
     const client = new Client({ url: "http://127.0.0.1:12345" })
     await client.connect()
 
-    let subscription = client.query("subscription { slider { value } }").subscribe((result) => {
+    let subscription = client.query("{ slider { value } }").subscribe((result) => {
         slider2 = result.data.slider.value
         displaySliders()
     })
     let setValue = async (value) => {
-        await client.query("mutation ($value: Int) { slider { setValue(value: $value) { value } } }", { value: value })
+        await client.mutation("($value: Int) { slider { setValue(value: $value) { value } } }", { value: value })
     }
 
     const readline = require("readline")
