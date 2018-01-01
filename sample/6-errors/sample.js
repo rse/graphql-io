@@ -22,10 +22,11 @@
     const { Client } = require("graphql-io-client")
     const client = new Client({ url: "http://127.0.0.1:12345", debug: 9 })
     client.at("debug", (ev) => console.log(`client [${ev.level}] ${ev.msg}`))
+    client.at("error", (ev) => console.log(`ERROR (directly): ${err}`))
     await client.connect()
     let result = await client.query("{ hello1 }")
     console.log("RESULT", result)
-    result = await client.query("{ hello2 }", {}, { errorPolicy: "all" })
+    result = await client.query("{ hello2 }")
     console.log("RESULT", result)
     await client.disconnect()
 
@@ -33,7 +34,7 @@
     console.log("OK")
     process.exit(0)
 })().catch((err) => {
-    console.log("ERROR", err)
+    console.log("ERROR (outer)", err)
     process.exit(0)
 })
 
