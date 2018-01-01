@@ -8,7 +8,7 @@
 
     const server = new Server({ url: "http://127.0.0.1:12345" })
     server.at("graphql-schema", () => `
-        extend type Root {
+        type Root {
             counter: Counter
         }
         type Counter {
