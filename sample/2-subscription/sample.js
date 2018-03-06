@@ -40,7 +40,8 @@
     **  ==== CLIENT #1 ====
     */
 
-    const client1 = new Client({ url: "http://127.0.0.1:12345" })
+    const client1 = new Client({ url: "http://127.0.0.1:12345", debug: 9 })
+    client1.at("debug", (ev) => console.log(`client1 [${ev.level}] ${ev.msg}`))
     await client1.connect()
     let subscription = client1.query(`{
         counter {
@@ -54,7 +55,8 @@
     **  ==== CLIENT #2 ====
     */
 
-    const client2 = new Client({ url: "http://127.0.0.1:12345" })
+    const client2 = new Client({ url: "http://127.0.0.1:12345", debug: 9 })
+    client2.at("debug", (ev) => console.log(`client2 [${ev.level}] ${ev.msg}`))
     await client2.connect()
     setInterval(async () => {
         let result = await client2.mutation(`{
