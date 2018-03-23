@@ -1,0 +1,17 @@
+{
+    "name":                               "sample",
+    "version":                            "0.0.0",
+    "description":                        "",
+    "dependencies": {
+        "graphql-io-client":              "file:../../../graphql-io-client",
+        "graphql-io-server":              "file:../../../graphql-io-server"
+    },
+    "devDependencies": {
+        "shx":                            "*"
+    },
+    "scripts": {
+        "start":                          "node sample.js",
+        "clean":                          "shx pwd",
+        "distclean":                      "shx rm -rf node_modules"
+    }
+}

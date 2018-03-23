@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>GraphQL-IO Client</title>
+        <script type="text/javascript" src="/api/data/blob/graphql-io.js"></script>
+        <script type="text/javascript">
+
+var Client = GraphQLClient.Client
+console.log(document.location)
+const client = new Client({
+    url: document.location.toString().replace(/\/client\.html$/, "")
+})
+client.connect().then(function () {
+    client.query("{ hello }").then(function (result) {
+        console.log(result)
+        client.disconnect()
+    })
+})
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
