@@ -10,7 +10,7 @@
         "shx":                            "*"
     },
     "scripts": {
-        "start":                          "node sample.js",
+        "start":                          "node server.js",
         "clean":                          "shx pwd",
         "distclean":                      "shx rm -rf node_modules"
     }
