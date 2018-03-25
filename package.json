@@ -1,6 +1,6 @@
 {
     "name":        "graphql-io",
-    "version":     "1.0.0",
+    "version":     "1.1.0",
     "description": "GraphQL Network Communication Framework (Meta)",
     "keywords":    [ "graphql", "network", "communication", "framework", "meta" ],
     "main":        "./graphql-io.js",
@@ -17,10 +17,10 @@
     "homepage": "https://github.com/rse/graphql-io",
     "bugs":     "https://github.com/rse/graphql-io/issues",
     "dependencies": {
-        "graphql-io-client":  "1.0.0",
-        "graphql-io-server":  "1.0.0"
+        "graphql-io-client":  "1.1.0",
+        "graphql-io-server":  "1.1.0"
     },
     "engines": {
-        "node":               ">=6.0.0"
+        "node":               ">=8.0.0"
     }
 }
