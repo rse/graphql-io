@@ -16,7 +16,7 @@ GraphQL Network Communication Framework
 <p/>
 <img src="https://david-dm.org/rse/graphql-io.png" alt=""/>
 
-ATTENTION: This is just a meta-package for GraphQL-IO. Please check out
+**ATTENTION**: This is just a meta-package for GraphQL-IO. Please check out
 [GraphQL-IO-Client](https://github.com/rse/graphql-io-client) and
 [GraphQL-IO-Server](https://github.com/rse/graphql-io-server)
 for the real client and server implementation packages!
