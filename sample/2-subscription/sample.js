@@ -22,14 +22,25 @@
     server.at("graphql-resolver", () => ({
         Root: {
             counter: (obj, args, ctx, info) => {
-                ctx.scope.record("Counter", 0, "read", "direct", "one")
+                ctx.scope.record({
+                    op:       "read",
+                    arity:    "one",
+                    dstType:  "Counter",
+                    dstIds:   [ "0" ]
+                })
                 return counter
             }
         },
         Counter: {
             increase: (obj, args, ctx, info) => {
                 counter.value++
-                ctx.scope.record("Counter", 0, "update", "direct", "one")
+                ctx.scope.record({
+                    op:       "update",
+                    arity:    "one",
+                    dstType:  "Counter",
+                    dstIds:   [ "0" ],
+                    dstAttrs: [ "value" ]
+                })
                 return counter
             }
         }

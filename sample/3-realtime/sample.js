@@ -21,14 +21,14 @@
     server.at("graphql-resolver", () => ({
         Root: {
             slider: (obj, args, ctx, info) => {
-                ctx.scope.record("Slider", 0, "read", "direct", "one")
+                ctx.scope.record({ op: "read", arity: "one", dstType: "Slider", dstIds: [ "0" ] })
                 return slider
             }
         },
         Slider: {
             setValue: (obj, args, ctx, info) => {
                 slider.value = args.value
-                ctx.scope.record("Slider", 0, "update", "direct", "one")
+                ctx.scope.record({ op: "update", arity: "one", dstType: "Slider", dstIds: [ "0" ], dstAttrs: [ "value" ] })
                 return slider
             }
         }

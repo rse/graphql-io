@@ -65,9 +65,9 @@ let id = 0
 const gts = new GraphQLSequelize(db, {
     idtype: "String",
     idmake: () => (id++).toString(),
-    tracer: (type, oid, obj, op, via, onto, ctx) => {
+    tracer: (record, ctx) => {
         if (ctx.scope !== null)
-            ctx.scope.record(type, oid, op, via, onto)
+            ctx.scope.record(record)
     }
 })
 gts.boot()
