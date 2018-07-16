@@ -1,6 +1,6 @@
 {
     "name":        "graphql-io",
-    "version":     "1.5.1",
+    "version":     "1.5.2",
     "description": "GraphQL Network Communication Framework (Meta)",
     "keywords":    [ "graphql", "network", "communication", "framework", "meta" ],
     "main":        "./graphql-io.js",
