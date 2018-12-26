@@ -7,7 +7,7 @@
         "graphql-io-server":              "file:../../../graphql-io-server"
     },
     "devDependencies": {
-        "shx":                            "~0.2.2"
+        "shx":                            "0.3.2"
     },
     "scripts": {
         "start":                          "node sample.js",

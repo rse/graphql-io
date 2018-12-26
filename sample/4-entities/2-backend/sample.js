@@ -9,6 +9,7 @@ const { Server }        = require("graphql-io-server")
 const db = new Sequelize("./sample.db", "", "", {
     dialect: "sqlite", host: "", port: "", storage: "./sample.db",
     define: { freezeTableName: true, timestamps: false },
+    operatorsAliases: false,
     logging: (msg) => { console.log("DB: " + msg) },
 })
 db.authenticate()
@@ -104,7 +105,7 @@ class DAO {
 let definition = `
     #   The root type for entering the graph of **OrgUnit** and **Person** entities.
     #   Access a single entity by unique id or access all entities.
-    extend type Root {
+    type Root {
         #   Access a particular organizational unit by unique id.
         ${gts.entityQuerySchema("Root", "", "OrgUnit")}
         #   Access all organizational units.
@@ -231,36 +232,37 @@ let query = `
     }
 `
 
-/*  setup network service  */
-let server = new Server({
-    url:     "http://0.0.0.0:12345",
-    pubsub:  "spm",
-    keyval:  "spm",
-    example: query.replace(/^\n/, "").replace(/^    /mg, "")
-})
+;(async () => {
+    /*  setup network service  */
+    let server = new Server({
+        url:     "http://0.0.0.0:12345/api",
+        pubsub:  "spm:sample",
+        keyval:  "spm:sample",
+        example: query.replace(/^\n/, "").replace(/^    /mg, "")
+    })
 
-/*  provide GraphQL schema and resolver  */
-server.at("graphql-schema",   () => definition)
-server.at("graphql-resolver", () => resolvers)
+    /*  provide GraphQL schema and resolver  */
+    server.at("graphql-schema",   () => definition)
+    server.at("graphql-resolver", () => resolvers)
 
-/*  wrap GraphQL operation into a database transaction  */
-server.at("graphql-transaction", async (ctx) => {
-    return (cb) => {
-        return db.transaction({
-            autocommit:     false,
-            deferrable:     true,
-            type:           db.Transaction.TYPES.DEFERRED,
-            isolationLevel: db.Transaction.ISOLATION_LEVELS.SERIALIZABLE
-        }, (tx) => {
-            cb(tx)
-        })
-    }
-})
+    /*  wrap GraphQL operation into a database transaction  */
+    server.at("graphql-transaction", (ctx) => {
+        return (cb) => {
+            return db.transaction({
+                autocommit:     false,
+                deferrable:     true,
+                type:           db.Transaction.TYPES.DEFERRED,
+                isolationLevel: db.Transaction.ISOLATION_LEVELS.SERIALIZABLE
+            }, (tx) => cb(tx))
+        }
+    })
 
-/*  start server  */
-server.start().then(() => {
-    console.log(`GraphiQL UI:  [GET]  http://0.0.0.0:12345`)
-    console.log(`GraphQL  API: [POST] http://0.0.0.0:12345`)
-    console.log(`GraphQL  API: [POST] ws://0.0.0.0:12345`)
+    /*  start server  */
+    await server.start()
+    console.log(`GraphiQL UI:  [GET]  http://0.0.0.0:12345/api`)
+    console.log(`GraphQL  API: [POST] http://0.0.0.0:12345/api`)
+    console.log(`GraphQL  API: [POST] ws://0.0.0.0:12345/api`)
+})().catch((err) => {
+    console.log("ERROR", err)
 })
 
