@@ -6,7 +6,7 @@
         "graphql-io-server":              "file:../../../../graphql-io-server",
         "graphql-tools-sequelize":        "2.1.0",
         "graphql-tools-types":            "1.2.0",
-        "sequelize":                      "4.42.0",
+        "sequelize":                      "6.3.5",
         "sqlite3":                        "4.0.4"
     },
     "devDependencies": {
